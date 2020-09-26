@@ -6,6 +6,8 @@ using System.IO;
 
 public class CheckUpdate : MonoBehaviour
 {
+	public GameObject UpdateAvailable;
+
 	public void CheckUpdateButton ()
 	{
 		StartCoroutine(check());
@@ -43,8 +45,11 @@ public class CheckUpdate : MonoBehaviour
 				Debug.Log("Up To Date");
 			} else	{
 				Debug.Log("Application isn't up to date");
-				Application.OpenURL("https://github.com/CriosChan/AlpineProject/releases/download/latest/alpine.apk");
+				UpdateAvailable.SetActive(true);
 			}
-		
+	}
+	
+	public void Download(){
+		Application.OpenURL("https://github.com/CriosChan/AlpineProject/releases/download/latest/alpine.apk");
 	}
 }

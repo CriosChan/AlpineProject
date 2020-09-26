@@ -17,6 +17,8 @@ public class Register : MonoBehaviour
 	public GameObject RegisterMenu;
 	public GameObject LoginMenu;
 	
+	public Text error;
+	
 	public void CallRegister()
 	{
 		StartCoroutine(RegisterEnum());
@@ -41,6 +43,19 @@ public class Register : MonoBehaviour
 		else
 		{
 			Debug.Log("User creation failed. Error 0" + www.text);
+			if(www.text == "1")
+			{
+				error.text = "ERREUR : Connection a la base de donnee impossible";
+			} else if(www.text == "2")
+			{
+				error.text = "ERREUR : Récupération des données impossibles";
+			} else if(www.text == "3")
+			{
+				error.text = "ERREUR : Nom d'utilisateur ou email deja utilisee";
+			} else if(www.text == "4")
+			{
+				error.text = "ERREUR : QUERY FAILED";
+			}
 		}
 		
 		

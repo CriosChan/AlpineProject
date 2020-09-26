@@ -7,7 +7,7 @@ public static class SaverScript
     public static void SaveUser(string user, string pass)
 	{
 		BinaryFormatter formatter = new BinaryFormatter();
-		string path = "users.bin";
+		string path = Application.persistentDataPath.ToString() + "/users.bin";
 		FileStream stream = new FileStream(path, FileMode.Create);
 		
 		UsersData data = new UsersData(user, pass);
@@ -18,7 +18,7 @@ public static class SaverScript
 	
 	public static UsersData LoadUser()
 	{
-		string path = "users.bin";
+		string path = Application.persistentDataPath.ToString() + "/users.bin";
 		if (File.Exists(path))
 		{
 			BinaryFormatter formatter = new BinaryFormatter();

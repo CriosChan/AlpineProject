@@ -16,6 +16,7 @@ public class Login : MonoBehaviour
 	public GameObject register;
 		
 	public Button submitButton;
+	public Text error;
 	
 	public void Start()
 	{
@@ -52,6 +53,19 @@ public class Login : MonoBehaviour
 		else
 		{
 			Debug.Log("User login failed. Error 0" + www.text);
+			if(www.text == "1")
+			{
+				error.text = "ERREUR : Connection à la base de donnée impossible";
+			} else if(www.text == "2")
+			{
+				error.text = "ERREUR : Récupération des données impossibles";
+			} else if(www.text == "5")
+			{
+				error.text = "ERREUR : Nom d'utilisateur inexistant";
+			} else if(www.text == "6")
+			{
+				error.text = "ERREUR : Mot de passe incorrecte";
+			}
 		}
 	}
 	

@@ -9,6 +9,7 @@ public class StartUIInisializer : MonoBehaviour
 	public GameObject register;
 	public GameObject interfacebase;
 	public GameObject MoreMenu;
+	public GameObject UpdateAvailable;
 
     // Start is called before the first frame update
 	
@@ -18,5 +19,6 @@ public class StartUIInisializer : MonoBehaviour
 		register.SetActive(false);
 		interfacebase.SetActive(false);
         MoreMenu.SetActive(false);
+		UpdateAvailable.SetActive(false);
     }
 }

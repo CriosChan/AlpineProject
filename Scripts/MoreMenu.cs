@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class MoreMenu : MonoBehaviour
 {
@@ -50,5 +51,12 @@ public class MoreMenu : MonoBehaviour
 		yield return new WaitForSeconds(2.5f);
 		animator.SetBool("End", false);
 		moremenu.SetActive(false);
+	}
+	
+	public void disconnect()
+	{
+		string path = Application.persistentDataPath.ToString() + "/users.bin";
+		File.Delete(path);
+		Application.Quit();
 	}
 }
